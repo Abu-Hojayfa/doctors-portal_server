@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 const port = process.env.PORT || 5000;
 const { MongoClient } = require("mongodb");
+const ObjectId = require("mongodb").ObjectId;
 
 app.use(cors());
 app.use(express.json());
@@ -46,6 +47,16 @@ client.connect((err) => {
     bookPatient.find({}).toArray((err, data) => {
       res.send(data);
     });
+  });
+
+  app.post("/changeaction", (req, res) => {
+    const id = req.body.id;
+    const action = req.body.action;
+    bookPatient
+      .updateOne({ _id: ObjectId(id) }, { $set: { action: action } })
+      .then((data) => {
+        res.send("Updated");
+      });
   });
 });
 
