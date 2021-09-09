@@ -14,6 +14,7 @@ const pass = process.env.DB_PASS;
 const db = process.env.DB_DATABASE;
 const collection1 = process.env.DB_COLLECTION1;
 const collection2 = process.env.DB_COLLECTION2;
+const collection3 = process.env.DB_COLLECTION3;
 
 const uri = `mongodb+srv://${host}:${pass}@cluster0.pec8g.mongodb.net/${db}?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, {
@@ -24,6 +25,7 @@ const client = new MongoClient(uri, {
 client.connect((err) => {
   const doctorSchedule = client.db(`${db}`).collection(`${collection1}`);
   const bookPatient = client.db(`${db}`).collection(`${collection2}`);
+  const admins = client.db(`${db}`).collection(`${collection3}`);
 
   app.get("/appointment-schedule", (req, res) => {
     doctorSchedule.find({}).toArray((err, data) => {
@@ -57,6 +59,11 @@ client.connect((err) => {
       .then((data) => {
         res.send("Updated");
       });
+  });
+
+  app.post("/addanadmin", (req, res) => {
+    const data = req.body;
+    admins.insertOne(data).then((data) => res.send(data));
   });
 });
 
