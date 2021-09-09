@@ -27,7 +27,6 @@ client.connect((err) => {
   const bookPatient = client.db(`${db}`).collection(`${collection2}`);
   const admins = client.db(`${db}`).collection(`${collection3}`);
 
-
   app.get("/appointment-schedule", (req, res) => {
     doctorSchedule.find({}).toArray((err, data) => {
       res.send(data);
@@ -71,10 +70,12 @@ client.connect((err) => {
     admins.find({}).toArray((err, data) => res.send(data));
   });
 
-
+  app.post("/deleteanadmin", (req, res) => {
+    admins
+      .deleteOne({ _id: ObjectId(req.body.id) })
+      .then((data) => res.send(data));
+  });
 });
-
-
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
