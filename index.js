@@ -81,6 +81,13 @@ client.connect((err) => {
       .find({ email: req.body.email })
       .toArray((err, data) => res.send(data));
   });
+
+  app.post("/deleteappointsbyuserreq", (req, res) => {
+    admins
+      .deleteOne({ _id: ObjectId(req.body.id) })
+      .then((data) => res.send(data));
+  });
+
 });
 
 app.listen(port, () => {
