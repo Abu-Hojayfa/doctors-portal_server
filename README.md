@@ -23,5 +23,5 @@ pass: 123456
 email: admin123@gmail.com <br>
 pass: 123456
 
-### [Live Site](https://doctors-portaal.web.app/home)
+### [Live Site](https://doctors-portaal.web.app)
 ### [Client Code](https://github.com/Abu-Hojayfa/doctors_portal)
