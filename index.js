@@ -75,6 +75,12 @@ client.connect((err) => {
       .deleteOne({ _id: ObjectId(req.body.id) })
       .then((data) => res.send(data));
   });
+
+  app.post("/myAppoints", (req, res) => {
+    bookPatient
+      .find({ email: req.body.email })
+      .toArray((err, data) => res.send(data));
+  });
 });
 
 app.listen(port, () => {
