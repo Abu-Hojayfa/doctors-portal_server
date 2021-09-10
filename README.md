@@ -1,7 +1,8 @@
 # Doctors Portal (server)
 A hospital website for taking appointments
 <img src="https://i.ibb.co/vY8CnGC/doctors-portal.png" alt="doctors-portal" border="0">
-## Functionalities
+
+## Functionalities (Important)
 1. Patient should open an account or login an account to use this website.
 2. After login patients can appoint a Doctor on their desire Date.
 3. And in Dashboard patient can see his appointment status, or can delete while it is pending.
@@ -23,4 +24,4 @@ email: admin123@gmail.com <br>
 pass: 123456
 
 ### [Live Site](https://doctors-portaal.web.app/home)
-### [Client Side](https://github.com/Abu-Hojayfa/doctors_portal)
+### [Client Code](https://github.com/Abu-Hojayfa/doctors_portal)
