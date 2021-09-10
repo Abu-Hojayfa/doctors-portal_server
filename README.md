@@ -15,12 +15,12 @@ A hospital website for taking appointments
 React, Bootstrap, Firebase, MongoDb, Node, Express
 
 ### User Account (default)
-email: user123@gmail.com
+email: user123@gmail.com <br>
 pass: 123456
 
 ### Admin Account (default)
-email: admin123@gmail.com
+email: admin123@gmail.com <br>
 pass: 123456
 
-[Live Site](https://doctors-portaal.web.app/home)
-[Client Side](https://github.com/Abu-Hojayfa/doctors_portal)
+### [Live Site](https://doctors-portaal.web.app/home)
+### [Client Side](https://github.com/Abu-Hojayfa/doctors_portal)
