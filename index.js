@@ -83,7 +83,7 @@ client.connect((err) => {
   });
 
   app.post("/deleteappointsbyuserreq", (req, res) => {
-    admins
+    bookPatient
       .deleteOne({ _id: ObjectId(req.body.id) })
       .then((data) => res.send(data));
   });
